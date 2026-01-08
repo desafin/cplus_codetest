@@ -4,7 +4,6 @@ using namespace std;
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
-<<<<<<< HEAD
 	cout.tie(0);
 	int n;
 	int answer=0;
@@ -21,10 +20,5 @@ int main() {
 		answer++;
 	}
 	cout<<-1<<"\n";
-=======
-	int num;
-	cin>>num;
-	int cnt=0;
->>>>>>> 09216d8 (add)
 	return 0;
 }

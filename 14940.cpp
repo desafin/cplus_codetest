@@ -15,10 +15,6 @@ int main() {
 
     queue<pair<int, int>> q;
 
-<<<<<<< HEAD
-    // 1. 입력 받기 및 목표 지점 찾기
-=======
->>>>>>> 09216d8 (add)
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cin >> a[i][j];
