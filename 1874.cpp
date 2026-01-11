@@ -18,16 +18,19 @@ int main() {
     int x;
     cin >> x;
 
-    while (cnt <= x) {
+    while(cnt<=x)
+    {
       s.push(cnt);
       cnt++;
       result.push_back('+');
     }
-
-    if (s.top() == x) {
+    if(s.top()==x)
+    {
       s.pop();
       result.push_back('-');
-    } else {
+    }
+    else
+    {
       possible = false;
       break;
     }
