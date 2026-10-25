@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="문제를 풀다 막혔을 때 빠르게 찾아보는 C++ 알고리즘 레퍼런스">
+  <title>Algorithm Shelf · 알고리즘 레퍼런스</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="처음으로">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span><strong>Algorithm Shelf</strong><small>내 알고리즘 레퍼런스</small></span>
+    </a>
+    <label class="search-box" for="search">
+      <span aria-hidden="true">⌕</span>
+      <input id="search" type="search" placeholder="BFS, priority_queue, 1260 검색..." autocomplete="off">
+      <kbd>/</kbd>
+    </label>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="테마 전환">
+      <span class="theme-icon">☾</span><span class="theme-label">다크 모드</span>
+    </button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav aria-label="문서 목록">
+        <p class="nav-label">QUICK START</p>
+        <a class="nav-link active" href="#home"><span>⌂</span> 홈</a>
+        <a class="nav-link" href="#mistakes"><span>!</span> 자주 하는 실수</a>
+        <p class="nav-label">REFERENCE</p>
+        <a class="nav-link" href="#cpp"><span>{ }</span> C++ 문법</a>
+        <a class="nav-link" href="#stl"><span>▣</span> STL 사용법</a>
+        <a class="nav-link" href="#algorithms"><span>⌁</span> 알고리즘 개념</a>
+        <a class="nav-link" href="#complexity"><span>◌</span> 복잡도</a>
+        <p class="nav-label">PRACTICE</p>
+        <a class="nav-link" href="#problems"><span>↗</span> BOJ 문제 풀이</a>
+      </nav>
+      <div class="sidebar-tip">
+        <span>TIP</span>
+        <p>막힌 키워드를 검색하세요.<br>문법과 알고리즘을 함께 찾아줍니다.</p>
+      </div>
+    </aside>
+
+    <main id="main-content">
+      <section class="hero" id="home">
+        <div>
+          <p class="eyebrow">YOUR POCKET REFERENCE</p>
+          <h1>막힐 때 꺼내보는<br><em>알고리즘 서랍</em></h1>
+          <p class="hero-copy">C++ 문법부터 알고리즘, BOJ 풀이까지.<br>필요한 것만 빠르게 찾아서 다시 문제로 돌아가세요.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#algorithms">개념 둘러보기 <span>→</span></a>
+            <a class="button ghost" href="#cpp">문법 레퍼런스</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="code-card">
+            <span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span>
+            <pre><span class="purple">queue</span>&lt;<span class="blue">int</span>&gt; q;
+visited[start] = <span class="orange">true</span>;
+q.push(start);
+
+<span class="purple">while</span> (!q.empty()) {
+  <span class="blue">int</span> now = q.front();
+  q.pop();
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="algorithms">
+        <div class="section-heading">
+          <div><p class="eyebrow">START HERE</p><h2>오늘 필요한 개념</h2></div>
+          <a href="#all" class="text-link" id="show-all">전체 보기 →</a>
+        </div>
+        <div class="card-grid" id="concept-cards">
+          <article class="topic-card searchable" data-search="bfs 너비 우선 탐색 최단거리 queue 그래프">
+            <div class="card-icon blue-bg">◎</div><span class="tag blue-tag">GRAPH</span>
+            <h3>BFS</h3><p>가까운 정점부터 탐색하기</p>
+            <div class="card-meta"><span>queue · 최단 거리</span><span>01</span></div>
+          </article>
+          <article class="topic-card searchable" data-search="dfs 깊이 우선 탐색 재귀 stack 그래프">
+            <div class="card-icon purple-bg">⌁</div><span class="tag purple-tag">GRAPH</span>
+            <h3>DFS</h3><p>한 방향으로 끝까지 탐색하기</p>
+            <div class="card-meta"><span>재귀 · backtracking</span><span>02</span></div>
+          </article>
+          <article class="topic-card searchable" data-search="이분 탐색 binary search 정렬">
+            <div class="card-icon orange-bg">↔</div><span class="tag orange-tag">SEARCH</span>
+            <h3>이분 탐색</h3><p>정렬된 범위를 절반씩 줄이기</p>
+            <div class="card-meta"><span>O(log N)</span><span>03</span></div>
+          </article>
+          <article class="topic-card searchable" data-search="dp 다이나믹 프로그래밍 동적 계획법">
+            <div class="card-icon green-bg">▦</div><span class="tag green-tag">DP</span>
+            <h3>동적 계획법</h3><p>작은 문제의 답을 저장하기</p>
+            <div class="card-meta"><span>memoization · 점화식</span><span>04</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="cpp">
+        <div class="section-heading"><div><p class="eyebrow">QUICK SYNTAX</p><h2>자주 찾는 C++ / STL</h2></div></div>
+        <div class="reference-grid">
+          <article class="reference-card searchable" data-search="vector 벡터 동적 배열 c++">
+            <div class="reference-title"><span class="mini-icon blue-bg">▤</span><div><h3>vector</h3><p>가변 크기 배열</p></div></div>
+            <div class="snippet"><button class="copy-button" type="button" data-copy="vector<int> v = {1, 2, 3};">복사</button><code><span class="purple">vector</span>&lt;<span class="blue">int</span>&gt; v;
+v.push_back(<span class="orange">10</span>);
+sort(v.begin(), v.end());</code></div>
+            <a href="#stl" class="text-link">자세히 보기 →</a>
+          </article>
+          <article class="reference-card searchable" data-search="priority_queue 우선순위 큐 힙 c++">
+            <div class="reference-title"><span class="mini-icon orange-bg">▴</span><div><h3>priority_queue</h3><p>가장 큰 값부터 꺼내기</p></div></div>
+            <div class="snippet"><button class="copy-button" type="button" data-copy="priority_queue<int> pq;\npq.push(3);\nint top = pq.top();">복사</button><code><span class="purple">priority_queue</span>&lt;<span class="blue">int</span>&gt; pq;
+pq.push(<span class="orange">3</span>);
+pq.top(); <span class="comment">// 3</span></code></div>
+            <a href="#stl" class="text-link">자세히 보기 →</a>
+          </article>
+          <article class="reference-card searchable" data-search="map unordered_map 해시 키 값 c++">
+            <div class="reference-title"><span class="mini-icon purple-bg">⌘</span><div><h3>map / unordered_map</h3><p>키와 값을 연결하기</p></div></div>
+            <div class="snippet"><button class="copy-button" type="button" data-copy="map<string, int> count;\ncount[\"apple\"]++; ">복사</button><code><span class="purple">map</span>&lt;<span class="blue">string</span>, <span class="blue">int</span>&gt; count;
+count[<span class="green">"apple"</span>]++;
+count[<span class="green">"apple"</span>];</code></div>
+            <a href="#stl" class="text-link">자세히 보기 →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section visual-section" id="bfs-demo">
+        <div class="section-heading"><div><p class="eyebrow">SEE IT IN ACTION</p><h2>BFS가 움직이는 방식</h2></div><button class="button small-button" id="run-bfs" type="button">다시 재생 ↻</button></div>
+        <div class="visualizer">
+          <div class="graph" id="graph" aria-label="BFS 그래프 시각화">
+            <i class="edge e1"></i><i class="edge e2"></i><i class="edge e3"></i><i class="edge e4"></i><i class="edge e5"></i>
+            <b class="node n1">1</b><b class="node n2">2</b><b class="node n3">3</b><b class="node n4">4</b><b class="node n5">5</b>
+          </div>
+          <div class="visual-copy"><span class="tag blue-tag">STEP <strong id="bfs-step">01</strong></span><h3 id="bfs-title">시작 정점을 큐에 넣어요</h3><p id="bfs-description">방문 표시를 한 뒤, 큐에서 하나씩 꺼내 인접한 정점을 추가합니다.</p><div class="queue-display"><span>QUEUE</span><div id="queue-items"><b>1</b></div></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="complexity">
+        <div class="section-heading"><div><p class="eyebrow">DON'T GET TLE</p><h2>복잡도 빠른 판단표</h2></div></div>
+        <div class="complexity-table">
+          <div class="complexity-row table-head"><span>복잡도</span><span>가능한 입력 크기</span><span>대표 예시</span></div>
+          <div class="complexity-row"><strong class="complexity-good">O(1)</strong><span>제한 없음</span><span>배열 인덱스 접근</span></div>
+          <div class="complexity-row"><strong class="complexity-good">O(log N)</strong><span>매우 큼</span><span>이분 탐색</span></div>
+          <div class="complexity-row"><strong class="complexity-ok">O(N)</strong><span>약 10<sup>7</sup></span><span>한 번 순회, BFS</span></div>
+          <div class="complexity-row"><strong class="complexity-warn">O(N²)</strong><span>약 5,000</span><span>이중 반복문</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="problems">
+        <div class="section-heading"><div><p class="eyebrow">BOJ NOTEBOOK</p><h2>내가 푼 문제</h2></div><a href="#problems" class="text-link">문제 번호로 찾기 →</a></div>
+        <div class="problem-list">
+          <a class="problem-row searchable" data-search="1260 dfs bfs 그래프" href="#algorithms"><span class="problem-number">1260</span><span><strong>DFS와 BFS</strong><small>그래프 탐색의 기본</small></span><span class="problem-tag">DFS · BFS</span><span class="arrow">→</span></a>
+          <a class="problem-row searchable" data-search="2178 미로 탐색 bfs 최단거리" href="#bfs-demo"><span class="problem-number">2178</span><span><strong>미로 탐색</strong><small>격자에서 BFS로 최단 거리 찾기</small></span><span class="problem-tag">BFS</span><span class="arrow">→</span></a>
+          <a class="problem-row searchable" data-search="11047 동전 0 그리디" href="#algorithms"><span class="problem-number">11047</span><span><strong>동전 0</strong><small>그리디하게 동전 개수 줄이기</small></span><span class="problem-tag">GREEDY</span><span class="arrow">→</span></a>
+        </div>
+      </section>
+
+      <section class="section mistakes" id="mistakes">
+        <div class="section-heading"><div><p class="eyebrow">CHECK BEFORE SUBMIT</p><h2>자주 하는 실수</h2></div></div>
+        <div class="mistake-grid"><div><span>01</span><h3>방문 체크 시점</h3><p>BFS는 큐에 넣을 때 방문 표시를 해야 중복 방문을 막을 수 있어요.</p></div><div><span>02</span><h3>자료형 범위</h3><p>합이나 곱이 커질 수 있다면 int 대신 long long을 먼저 의심하세요.</p></div><div><span>03</span><h3>인덱스 범위</h3><p>입력 조건의 최댓값과 배열 선언 크기를 한 번 더 비교하세요.</p></div></div>
+      </section>
+    </main>
+  </div>
+  <footer><span>Algorithm Shelf</span><span>문제를 풀다 막혔을 때, 여기서 다시 시작하기.</span></footer>
+  <div class="toast" id="toast" role="status">코드를 복사했어요</div>
+  <script src="script.js"></script>
+</body>
+</html>
