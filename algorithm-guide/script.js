@@ -28,6 +28,13 @@ search.addEventListener("input", () => {
   });
 });
 
+document.querySelector("#show-all").addEventListener("click", () => {
+  search.value = "";
+  searchable.forEach((item) => {
+    item.hidden = false;
+  });
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "/" && document.activeElement !== search) {
     event.preventDefault();
